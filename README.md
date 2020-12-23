@@ -57,7 +57,7 @@ spec.path(resource=hello)
 
 * Contribute: https://github.com/ovh/python-apispec-fromfile/blob/master/CONTRIBUTING.md
 * Report bugs: https://github.com/ovh/python-apispec-fromfile/issues
-* Get latest version: https://pypi.org/projec/apispec-fromfile
+* Get latest version: https://pypi.org/project/apispec-fromfile
 
 # License
 
