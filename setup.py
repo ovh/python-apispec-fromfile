@@ -19,7 +19,6 @@ setup(
     classifiers=[
         "Environment :: Plugins",
         "Environment :: Web Environment",
-        "Framework :: APISpec",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python",
