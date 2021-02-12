@@ -11,7 +11,7 @@ pay attention to a few things:
 
 # Coding and documentation Style
 
-- The coding style follows [PEP-8: Style Guide for Python Code][https://www.python.org/dev/peps/pep-0008/] (~100 chars/lines is a good limit)
+- The coding style follows [PEP-8: Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/) (~100 chars/lines is a good limit)
 - The documentation style follows [PEP-257: Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)
 
 A good practice is to frequently run you code through `tox -e lint`.
