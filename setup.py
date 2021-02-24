@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="APISpec-fromfile",
-    version="1.0.1",
+    version="1.0.2",
     author="OVHcloud",
     author_email="opensource@ovhcloud.com",
     description="APISpec plugin to import OpenAPI specifications from a file instead of putting YAML into docstrings",
