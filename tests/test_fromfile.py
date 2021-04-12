@@ -1,7 +1,9 @@
 """ Test for apispec_fromfile """
 
 from apispec import APISpec
+from apispec.exceptions import APISpecError
 from apispec.yaml_utils import load_operations_from_docstring
+import pytest
 
 from apispec_fromfile import FromFilePlugin
 from apispec_fromfile import from_file
@@ -57,3 +59,25 @@ def test_plugin():
     hello_path = paths["/hello"]
 
     assert hello.__apispec__ == hello_path
+
+
+def test_readme()
+    """ Test the code in the readme file """
+    # Create an APISpec
+    spec = APISpec(
+        title="Swagger Petstore",
+        version="1.0.0",
+        openapi_version="3.0.3",
+        plugins=[FromFilePlugin("resource")],
+    )
+
+    # Create an endpoint
+    @from_file("my-spec-file.yml")
+    def hello():
+        return {"hello"}
+
+    # Register entities and paths
+    with pytest.raises(APISpecError):
+        spec.path(resource=hello)
+    # use the right syntax, available for all framework
+    spec.path("/hello", resource=hello)
