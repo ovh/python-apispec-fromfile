@@ -50,7 +50,7 @@ def hello():
     return {"hello"}
 
 # Register entities and paths
-spec.path(resource=hello)
+spec.path("/hello", resource=hello)
 ```
 
 # Related links
