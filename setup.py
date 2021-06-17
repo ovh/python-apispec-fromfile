@@ -22,15 +22,16 @@ setup(
         "Intended Audience :: Developers",
         "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
         "Topic :: Documentation",
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     keywords="openapi apispec",
     install_requires=[
-        "apispec[yaml]",
+        "apispec[yaml]>=4.0.0",
     ],
-    python_requires=">=3.5",
+    python_requires=">=3.6",
     tests_require=["pytest"],
     test_suite="tests",
 )
