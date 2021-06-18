@@ -61,7 +61,7 @@ def test_plugin():
     assert hello.__apispec__ == hello_path
 
 
-def test_readme()
+def test_readme():
     """ Test the code in the readme file """
     # Create an APISpec
     spec = APISpec(
