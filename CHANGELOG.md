@@ -1,5 +1,13 @@
 # Release notes
 
+## 1.0.3 (2021-06-24)
+
+* build: specify the apispec min version
+* ci: run tests on GitHub Actions
+* fix(readme): add the endpoint `/hello` to the sample code
+* test(readme): add a test for the code in the README
+
+
 ## 1.0.2 (2021-02-24)
 
 * Fix(doc): use the right Markdown syntax for links
