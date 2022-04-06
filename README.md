@@ -1,6 +1,9 @@
 # APISpec-fromfile
 
 [![Tests Status](https://github.com/ovh/python-apispec-fromfile/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/ovh/python-apispec-fromfile/actions/workflows/tests.yml)
+[![PyPI version](https://img.shields.io/pypi/v/apispec-fromfile)](https://pypi.python.org/pypi/apispec-fromfile)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/apispec-fromfile.svg)](https://pypi.python.org/pypi/apispec-fromfile)
+
 
 [APISpec](https://apispec.readthedocs.io/en/latest/) plugin to import [OpenAPI specifications](https://github.com/OAI/OpenAPI-Specification) from a file instead of putting YAML into docstrings.
 
