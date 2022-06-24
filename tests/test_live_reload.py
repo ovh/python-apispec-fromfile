@@ -73,23 +73,14 @@ def test_spec_is_not_updated_without_live_reload_flag(tmp_path):
 def test_spec_is_updated_with_live_reload_flag(tmp_path):
     """
     Ensure that when external file changed,
-    the method spec is not updated when not using live-reload flag
+    the method spec is updated when using live-reload flag
     """
-
-    spec = APISpec(
-        title="Petstore",
-        version="1.0.0",
-        openapi_version="3.0.3",
-        plugins=[FromFilePlugin("func")],
-    )
 
     yaml_file, yaml_content = write_yaml_file(tmp_path)
 
     @from_file(str(yaml_file), live_reload = True)
     def hello():
         return "hello"
-
-    spec.path("/hello", func=hello)
 
     assert load_operations_from_docstring(yaml_content) == make_spec(hello).to_dict()['paths']['/hello']
 
