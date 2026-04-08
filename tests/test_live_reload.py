@@ -32,7 +32,8 @@ def write_yaml_file(path, summary: str = 'Hello'):
 
 def make_spec(func):
     """
-    Create apispec object with default params for passed '/hello' method handler
+    Create apispec object with default params for passed '/hello' method
+    handler
     """
 
     spec = APISpec(
@@ -58,16 +59,18 @@ def test_spec_is_not_updated_without_live_reload_flag(tmp_path):
     def hello():
         return "hello"
 
-    assert load_operations_from_docstring(yaml_content) == make_spec(hello).to_dict()['paths']['/hello']
+    yaml_operations_loaded = load_operations_from_docstring(yaml_content)
+    assert yaml_operations_loaded == make_spec(hello).to_dict()['paths']['/hello']
 
     # update file contents
-    yaml_file, yaml_content_updated = write_yaml_file(tmp_path, summary = 'Hello world')
+    yaml_file, yaml_content_updated = write_yaml_file(tmp_path, summary='Hello world')
+    yaml_operations_updated_loaded = load_operations_from_docstring(yaml_content_updated)
 
     # check that yaml content has changed, but the method spec has not
-
-    assert load_operations_from_docstring(yaml_content) != load_operations_from_docstring(yaml_content_updated)
-    assert load_operations_from_docstring(yaml_content) == make_spec(hello).to_dict()['paths']['/hello']
-    assert load_operations_from_docstring(yaml_content_updated) != make_spec(hello).to_dict()['paths']['/hello']
+    assert yaml_operations_loaded != yaml_operations_updated_loaded
+    assert yaml_operations_loaded == make_spec(hello).to_dict()['paths']['/hello']
+    assert yaml_operations_updated_loaded != make_spec(hello).to_dict()['paths']['/hello']
+    assert yaml_operations_updated_loaded['get']['summary'] == "Hello world"
 
 
 def test_spec_is_updated_with_live_reload_flag(tmp_path):
@@ -78,17 +81,19 @@ def test_spec_is_updated_with_live_reload_flag(tmp_path):
 
     yaml_file, yaml_content = write_yaml_file(tmp_path)
 
-    @from_file(str(yaml_file), live_reload = True)
+    @from_file(str(yaml_file), live_reload=True)
     def hello():
         return "hello"
 
-    assert load_operations_from_docstring(yaml_content) == make_spec(hello).to_dict()['paths']['/hello']
+    yaml_operations_loaded = load_operations_from_docstring(yaml_content)
+    assert yaml_operations_loaded == make_spec(hello).to_dict()['paths']['/hello']
 
     # update file contents
-    yaml_file, yaml_content_updated = write_yaml_file(tmp_path, summary = 'Hello world')
+    yaml_file, yaml_content_updated = write_yaml_file(tmp_path, summary='Hello world')
+    yaml_operations_updated_loaded = load_operations_from_docstring(yaml_content_updated)
 
     # check that yaml content has changed, and the method spec as well
-
-    assert load_operations_from_docstring(yaml_content) != load_operations_from_docstring(yaml_content_updated)
-    assert load_operations_from_docstring(yaml_content) != make_spec(hello).to_dict()['paths']['/hello']
-    assert load_operations_from_docstring(yaml_content_updated) == make_spec(hello).to_dict()['paths']['/hello']
+    assert yaml_operations_loaded != yaml_operations_updated_loaded
+    assert yaml_operations_loaded != make_spec(hello).to_dict()['paths']['/hello']
+    assert yaml_operations_updated_loaded == make_spec(hello).to_dict()['paths']['/hello']
+    assert yaml_operations_updated_loaded['get']['summary'] == "Hello world"

@@ -38,12 +38,12 @@ class FromFilePlugin(BasePlugin):
 
 def read_spec(path: str):
     # get the file
-    path = Path(path)
-    if not path.exists():
+    filepath = Path(path)
+    if not filepath.exists():
         return None
 
     # get the content
-    return path.read_text()
+    return filepath.read_text()
 
 
 def load_spec(func, path):
