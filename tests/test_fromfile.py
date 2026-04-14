@@ -1,4 +1,4 @@
-""" Test for apispec_fromfile """
+"""Test for apispec_fromfile"""
 
 from apispec import APISpec
 from apispec.exceptions import APISpecError
@@ -10,7 +10,7 @@ from apispec_fromfile import from_file
 
 
 def test_from_file_decorator(tmp_path):
-    """ Test the from_file decorator. """
+    """Test the from_file decorator."""
     # create a temp yaml file
     yaml_content = """
     ---
@@ -36,7 +36,7 @@ def test_from_file_decorator(tmp_path):
 
 
 def test_plugin():
-    """ Test the FromFilePlugin class. """
+    """Test the FromFilePlugin class."""
     # init the spec
     spec = APISpec(
         title="Petstore",
@@ -62,7 +62,7 @@ def test_plugin():
 
 
 def test_readme():
-    """ Test the code in the readme file """
+    """Test the code in the readme file"""
     # Create an APISpec
     spec = APISpec(
         title="Swagger Petstore",

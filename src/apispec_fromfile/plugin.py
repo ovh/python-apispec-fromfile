@@ -1,4 +1,4 @@
-""" Plugin class """
+"""Plugin class"""
 
 from pathlib import Path
 
@@ -18,7 +18,7 @@ class FromFilePlugin(BasePlugin):
         self.func_key = func_key
 
     def operation_helper(self, path=None, operations=None, **kwargs):
-        """ apispec operation helper """
+        """apispec operation helper"""
         # get the endpoint name
         view = kwargs.pop(self.func_key)
 
@@ -60,7 +60,7 @@ def load_spec(func, path):
 
 
 def from_file(spec_path, live_reload: bool = False):
-    """ Decorate an endpoint with an OpenAPI spec file to import. """
+    """Decorate an endpoint with an OpenAPI spec file to import."""
 
     def wrapper(func):
         # save the content in a special attribute of the function
