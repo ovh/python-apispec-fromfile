@@ -1,6 +1,5 @@
 [project]
 name = "apispec-fromfile"
-version = "1.0.3"
 authors = [
     { name = "OVHcloud", email = "opensource@ovhcloud.com" },
 ]
@@ -12,6 +11,7 @@ requires-python = ">=3.10"
 dependencies = [
     "apispec[yaml]>=6.9.0",
 ]
+dynamic = ["version"]
 keywords = ["openapi", "apispec"]
 classifiers = [
     "Environment :: Plugins",
@@ -33,7 +33,7 @@ classifiers = [
 Repository = "https://github.com/ovh/python-apispec-fromfile"
 
 [build-system]
-requires = ["setuptools>=77.0.3"]
+requires = ["setuptools>=80", "setuptools-scm[simple]>=9.2"]
 build-backend = "setuptools.build_meta"
 
 [tool.ruff]

@@ -58,6 +58,14 @@ def hello():
 spec.path("/hello", resource=hello)
 ```
 
+To get the version of the library, use feature detection:
+
+```python
+from importlib.metadata
+
+importlib.metadata.version("apispec_fromfile")
+```
+
 # Related links
 
 * Contribute: https://github.com/ovh/python-apispec-fromfile/blob/master/CONTRIBUTING.md
