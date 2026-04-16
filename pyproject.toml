@@ -1,5 +1,39 @@
+[project]
+name = "apispec-fromfile"
+version = "1.0.3"
+authors = [
+    { name = "OVHcloud", email = "opensource@ovhcloud.com" },
+]
+description = "APISpec plugin to import OpenAPI specifications from a file instead of putting YAML into docstrings"
+readme = { "file" = "README.md", content-type = "text/markdown" }
+license = "Apache-2.0"
+license-files = ["LICENSE", "AUTHORS", "CONTRIBUTORS", "MAINTAINERS"]
+requires-python = ">=3.10"
+dependencies = [
+    "apispec[yaml]>=6.9.0",
+]
+keywords = ["openapi", "apispec"]
+classifiers = [
+    "Environment :: Plugins",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Documentation",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Repository = "https://github.com/ovh/python-apispec-fromfile"
+
 [build-system]
-requires = ["setuptools>=40.8.0", "wheel"]
+requires = ["setuptools>=77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [tool.ruff]
